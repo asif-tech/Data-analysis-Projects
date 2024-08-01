@@ -1,84 +1,31 @@
-# Customer Churn Analysis using RFM
+# Data Analytics Customer Segmentation
 
-## Description
-This project focuses on analyzing customer churn using the RFM (Recency, Frequency, Monetary) analysis technique. By cleaning and preparing customer data, we aim to identify key patterns and factors that influence customer retention and churn, providing actionable insights for business decisions. The analysis is performed using Python with libraries such as Pandas and NumPy.
+## Goal of the project
+The purpose of this project is to conduct a Customer Segmentation Analysis for an Automobile bike Company. Customer segmentation is performed by developing a RFM Model. RFM (Recency, Frequency, Monetary) analysis is a behavior-based approach grouping customers into segments. It groups the customers on the basis of their previous purchase transactions. In this analysis the customer segment was divided into 11 groups. The analysis will help in determining which customers segments should be targeted in order to enhance sales revenue for the company. A <b>Sales Dashboard for Customer Segmentation</b> is developed using <b>Tableau</b> and the data quality assessment and analysis is done using <b>Python</b>.
 
-## Table of Contents
-- [Installation](#installation)
-- [Usage](#usage)
-- [Features](#features)
-- [Project Structure](#project-structure)
-- [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
+## Analysis Approach
+### 1. Data Quality Assessment and Data Cleaning
+The first step towards generating useful insights from the data was the data prepartion, quality assessment and data cleaning step. After the cleaning process exploratory data analysis on the dataset and identification customer purchasing behaviours to generate insights can be performed.
 
-## Installation
-To run this project locally, follow these steps:
-
-```bash
-# Clone the repository
-git clone https://github.com/asif-tech/Data-analysis-Projects.git
-
-# Change into the project directory
-cd Data-analysis-Projects/Customer-Churn
-
-# (Optional) Create and activate a virtual environment
-python -m venv venv
-source venv/bin/activate # On Windows use `venv\Scripts\activate`
-
-# Install dependencies
-pip install -r requirements.txt
-
-
-Usage
-To use this project, run the Jupyter Notebooks provided:
-Open the following notebooks to explore the analysis and results:
-
-1. Customer_Segmentation_Customer_Adress_Data_DQA_and_Data_Cleaning.ipynb
-2. CustomerDemographic_DQA_and_Data_Cleaned.ipynb
-3. NewCustomer_DQA_and_data_Cleaned.ipynb
-4. TransactionData_DQA_and_Cleaned.ipynb
-5. RFM_Analysis.ipynb
-
-#Features
-Data Preprocessing: Clean and prepare customer data from multiple CSV files.
-Data Quality Assessment (DQA): Perform data quality checks on four different data sources.
-RFM Analysis: Calculate Recency, Frequency, and Monetary values for each customer.
-Customer Segmentation: Segment customers based on their RFM scores.
-Visualization: Generate charts and graphs to visualize customer segments and insights.
-
-#Project Structure
-The project is organized as follows:
-Customer-Churn/
-│
-├── Customer_Segmentation_Customer_Adress_Data_DQA_and_Data_Cleaning.ipynb
-├── CustomerDemographic_DQA_and_Data_Cleaned.ipynb
-├── NewCustomer_DQA_and_data_Cleaned.ipynb
-├── TransactionData_DQA_and_Cleaned.ipynb
-├── RFM_Analysis.ipynb
-├── data/
-│   ├── new_customer_list.csv
-│   ├── old_customer_list.csv
-│   ├── transaction_list.csv
-│   └── merged_transaction_customer.csv
-├── requirements.txt
-└── README.md
-
-data/: Contains the CSV files used for the analysis.
-.ipynb files: Jupyter Notebooks for data quality assessment, data cleaning, and RFM analysis.
-
-#Contributing
-Contributions are welcome! To contribute to this project, follow these steps:
-
-Fork the repository.
-Create a new branch (git checkout -b feature-branch).
-Make your changes.
-Commit your changes (git commit -m 'Add new feature').
-Push to the branch (git push origin feature-branch).
-Open a Pull Request.
-
-#Contact
-For questions or support, please contact:
-
-Email: asifnawaz.an79@gmail.com
-GitHub: asif-tech
+In the data cleaning step the data quality of the following datasets were first assesed. After a data quality assessment the following data quality issues was observed and the necessary process to mitigate the issue was followed :
+- <b>CustomerDemographics.xlsx</b> :
+  - 1 Irrelevent column was present and such columns were dropped from the dataset.
+  - There were 5 columns were Missing values were present. For such columns based on the volumne of the missing values either the records were dropped or appropiate values were imputed at places of missing values
+  - For gender column there was no standardisation of data. Based on the values available the column data was standardised to remove data inconsistency.
+  - The Date of Birth column was transformed to create a new feature column 'Age' and 'Age Group' to check for discripency of age distribution. An <b>outlier</b> was observed and the record was removed.
+  - Checked whether there are duplicate records present in the dataset. In this dataset there were no duplicate records.
+- <b>NewCustomerList.xlsx</b> :
+  - 5 Irrelevent column was present and such columns were dropped from the dataset.
+  - There were 4 columns were Missing values were present. For such columns based on the volumne of the missing values either the records were dropped or appropiate values were imputed at places of missing values
+  - The Date of Birth column was transformed to create a new feature column 'Age' and 'Age Group' to check for discripency of age distribution.
+  - There was no data inconsistency.
+  - Checked whether there are duplicate records present in the dataset. In this dataset there were no duplicate records.
+- <b>Transaction_data.xlsx </b>:
+  - The product_first_sold_date column is not in datetime format. The data type of this column was changed from int64 to datetime format.
+  - There were 7 columns were Missing values were present. For such columns based on the volumne of the missing values either the records were dropped or appropiate values were imputed at places of missing values
+  - A new feature column 'Profit' was created which is basically the difference between list price and standard price.
+  - There was no data inconsistency.
+  - Checked whether there are duplicate records present in the dataset. In this dataset there were no duplicate records.
+- <b>CustomerAddress.xlsx</b> :
+  - For states column there was no standardisation of data. Based on the values available the column data was standardised to remove data inconsistency.
+  - There were certain customer IDs from Customer Dempgraphics table which were getting dropped in the Address table.
