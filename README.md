@@ -5,7 +5,7 @@ The purpose of this project is to conduct a Customer Segmentation Analysis for a
 
 ## Analysis Approach
 ### 1. Data Quality Assessment and Data Cleaning
-The first step towards generating useful insights from the data was the data prepartion, quality assessment and data cleaning step. After the cleaning process exploratory data analysis on the dataset and identification customer purchasing behaviours to generate insights can be performed.
+The first step towards generating useful insights from the data was the data prepartion, quality assessment and data cleaning step. After the cleaning process exploratory data analysis on the dataset and identification customer purchasing behaviours to generate insights can be performed.  
 
 In the data cleaning step the data quality of the following datasets were first assesed. After a data quality assessment the following data quality issues was observed and the necessary process to mitigate the issue was followed :
 - <b>CustomerDemographics.xlsx</b> :
