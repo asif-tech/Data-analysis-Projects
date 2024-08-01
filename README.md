@@ -85,4 +85,47 @@ After the data cleaning process, exploratory analysis on the dataset is performe
   - In Victoria the proportion is quite even.
   - In Queensland the number of people owning a car is greater than who donot have a car.
   <img src="data%20visualization/Car%20Owners%20by%20State.PNG" height="400" align="middle">
+### 3. RFM Analysis and Customer Segmentation
+In this stage of analysis the customer segmentation was done by developing an RFM Model. The RFM (Recency, Frequency, Monetary) analysis is a behavior-based approach grouping customers into segments. It groups the customers on the basis of their previous purchase transactions.
 
+In this analysis the customer segment was divided into 11 groups. The groups being : 
+- Platinum Customers
+- Very Loyal Customers
+- Recent Customers
+- Potential Customers
+- Lost Customers
+- Losing Customers
+- Late Bloomer
+- High Risk Customers
+- Evasive Customers
+- Becoming Loyal
+- Almost lost Customers
+
+As of the current state of the Automobile business the current distribution of customers segments is depicted below:
+<img src="data%20visualization/Customer%20Segment%20Distribution.PNG" height="400" align="middle">
+
+### 4. RFM Analysis: Scatter Plots
+#### Recency vs Monetary :
+The visualization shows that recent customers have purchased more products and generated relatively more revenue than the customers who visited a while ageo.<br>
+<img src="data%20visualization/Recency%20vs%20Monetary.PNG" height="400" align="middle"><br>
+#### Frequency vs Monetary : 
+The visualization shows that customers belonging to Platinum/ Very Loyal/ Becoming Loyal Customer Segments have a greater frequency and generate greater monetary for the business<br>
+<img src="data%20visualization/Frequency%20vs%20Monetary.PNG" height="400" align="middle"><br>
+
+## Datasets Used
+The datasets used include:
+- __Raw_data.xlsx__: This excel file dataset included the following sheets of data:
+  -  __Transactions_data.xlsx__: This dataset included the transactions data of the customers across all the different states in Australia.
+  -  __NewCustomerList.xlsx__: This dataset included the new customers who visted the automobile bike company recently.
+  -  __CustomerDemographic.xlsx__: This dataset included entire details of the Customer Demographics.
+  -  __CustomerAddress.xlsx__: This dataset included the address of the Customers.
+## Tools and Technologies used
+The tools used in this project include:
+- __Python__ - This was needed to conduct <b>Data Quality Assessment</b> and also for <b>Data Cleaning processes</b>. With Python libraries <b>pandas, matplotlib, seaborn</b> exploratory data analysis of the datasets and to gain useful insights from the data was possible.
+- __Tableau__ - This <b>Business Intelligence</b> tool was required to explore data and create charts, graphs, visualizations to come up with a <b>Sales Dashboard for Customer Segmenatation</b> for the automobile bike company. The Tableau Sales Dashboard can be found [here](https://public.tableau.com/profile/abhishek.chowdhury#!/vizhome/CustomerSegmentationDashboard_16175595616510/RFMDashboard)
+
+
+## Built With
+- Python 3.8.2, Tableau
+
+## Authors
